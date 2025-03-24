@@ -1,0 +1,14 @@
+{
+    "name": "admin/capstone22-lost-and-found",
+    "description": "this system for losta nd found system",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
