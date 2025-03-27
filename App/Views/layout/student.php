@@ -1,6 +1,21 @@
 <?php
-session_start();
-$user_id = isset($_SESSION['role']) && $_SESSION['role'] === "administrator";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once __DIR__ . '/../../Config/Database.php';
+
+use App\Config\Database;
+
+$database = new Database();
+$pdo = $database->connect();
+$user_id = isset($_SESSION['role']) && $_SESSION['role'] === "student";
+
+
+$notifyStmt = $pdo->prepare("SELECT COUNT(*) AS unread_count FROM notifications WHERE user_id = ? AND status = 'Unread'");
+$notifyStmt->execute([$_SESSION['user_id']]);
+$notification = $notifyStmt->fetch(PDO::FETCH_ASSOC);
+$unreadCount = $notification['unread_count'];
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +33,7 @@ $user_id = isset($_SESSION['role']) && $_SESSION['role'] === "administrator";
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
-                <a href="index.php" class="text-white text-2xl font-bold">MyApp</a>
+                <a href="index.php" class="text-white text-2xl font-bold">Miriam Lost and Found System</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -32,26 +47,38 @@ $user_id = isset($_SESSION['role']) && $_SESSION['role'] === "administrator";
 
             <!-- Navbar Links -->
             <div class="hidden sm:flex sm:items-center space-x-4">
-                <a href="index.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
-                <a href="lost.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Lost</a>
-                <a href="found.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Found</a>
-                <a href="users.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Users</a>
-                <a href="session.php" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded-md">Logout</a>
+                <a href="../student/dashboard.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
+                <a href="../student/lost-item.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Lost</a>
+                <a href="../student/claim-item.php" class=" relativetext-white hover:bg-blue-700 px-3 py-2 rounded-md">Claim
+                <?php if ($unreadCount > 0): ?>
+        <span class="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+            <?php echo $unreadCount; ?>
+        </span>
+    <?php endif; ?>
+                </a>
+                <!-- <a href="users.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Users</a> -->
+                <a href="../student/session.php" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded-md">Logout</a>
             </div>
         </div>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden sm:hidden bg-blue-600">
-        <a href="index.php" class="block text-white px-4 py-2">Home</a>
-        <a href="lost.php" class="block text-white px-4 py-2">Lost</a>
-        <a href="found.php" class="block text-white px-4 py-2">Found</a>
-        <a href="users.php" class="block text-white px-4 py-2">Users</a>
-        <a href="logout.php" class="block text-white px-4 py-2 bg-red-500 hover:bg-red-600">Logout</a>
+    <a href="../student/dashboard.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
+                <a href="../student/lost-item.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Lost</a>
+                <a href="../student/claim-item.php" class=" relativetext-white hover:bg-blue-700 px-3 py-2 rounded-md">Claim
+                <?php if ($unreadCount > 0): ?>
+        <span class="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+            <?php echo $unreadCount; ?>
+        </span>
+    <?php endif; ?>
+                </a>
+                <!-- <a href="users.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Users</a> -->
+                <a href="../student/session.php" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded-md">Logout</a>
     </div>
 </nav>
 
 
-<script src="../../Resources/js/header.js"></script>
+<!-- <script src="../../Resources/js/header.js"></script> -->
 
 

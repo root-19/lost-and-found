@@ -45,4 +45,12 @@ class UserModel {
         
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getAllStudents() {
+        $query = "SELECT id, first_name, last_name, email FROM " . $this->table . " WHERE role = 'student'";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
