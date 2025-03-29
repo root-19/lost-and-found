@@ -29,13 +29,13 @@ $unreadCount = $notification['unread_count'];
 <body>
 
 <!-- Navbar -->
-<nav class="bg-blue-600 shadow-md">
+<nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex items-center">
-                <a href="index.php" class="text-white text-2xl font-bold">Miriam Lost and Found System</a>
-            </div>
-
+        <div class="flex justify-between h-20">
+        <div class="flex items-center">
+            <img src="../../Resources/image/Miriam_College_seal.svg" alt="Logo" class="h-16 w-20 mr-3">
+            <h1 class="text-xl text-gradient-to-br from-gray-900 to-blue-800 font-semibold">Miriam College - Lost and Found System</h1>
+        </div>
             <!-- Mobile Menu Button -->
             <div class="flex items-center sm:hidden">
                 <button id="menu-toggle" class="text-white focus:outline-none">
@@ -46,11 +46,11 @@ $unreadCount = $notification['unread_count'];
             </div>
 
             <!-- Navbar Links -->
-            <div class="hidden sm:flex sm:items-center space-x-4">
-                <a href="../student/dashboard.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
-                <a href="../student/lost-item.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Lost</a>
-                <a href="../student/claim-item.php" class=" relativetext-white hover:bg-blue-700 px-3 py-2 rounded-md">Claim
-                <?php if ($unreadCount > 0): ?>
+            <div class="hidden sm:flex sm:items-center space-x-4 text-black">
+                <a href="../student/dashboard.php" class="text-black font-bold  hover:bg-gradient-to-br from-gray-900 to-blue-800 px-3 py-2 rounded-md">Home</a>
+                <a href="../student/lost-item.php" class="text-black font-bold hover:bg-hover:bg-gradient-to-br from-gray-900 to-blue-800 bg-blue-700 px-3 py-2 rounded-md">Lost</a>
+                <a href="../student/claim-item.php" class=" relativetext-white font-bold hover:bg-gradient-to-br from-gray-900 to-blue-800 bg-blue-700 px-3 py-2 rounded-md">Claim
+                <?php if ($unreadCount > 0): ?>bg-
         <span class="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
             <?php echo $unreadCount; ?>
         </span>

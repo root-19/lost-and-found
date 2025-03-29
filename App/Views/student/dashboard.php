@@ -12,7 +12,7 @@ $userName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 ?>
 
 <div class="max-w-2xl mx-auto p-6 bg-white mt-20">
-        <h1 class="text-3xl font-semibold text-purple-900">Welcome, <?php echo htmlspecialchars($userName); ?>!</h1>
+        <h1 class="text-3xl font-semibold text-gray-900">Welcome, <?php echo htmlspecialchars($userName); ?>!</h1>
         <p class="mt-2 text-gray-600">
             This is the Lost and Found System where students can report lost items and claim found belongings.
         </p>
@@ -29,7 +29,7 @@ $userName = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
 
         <div class="mt-6">
           
-            <a href="lost-items.php" class="ml-2 bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600">
+            <a href="lost-items.php" class="ml-2 bg-gradient-to-br from-gray-900 to-blue-800 bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-gray-600">
                 View Found Items
             </a>
         </div>

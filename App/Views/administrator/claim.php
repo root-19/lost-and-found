@@ -43,12 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["approve_claim"])) {
 ?>
 
 <div class="container mx-auto py-8">
-    <h1 class="text-3xl font-semibold text-center text-purple-900">Claim Requests</h1>
+    <h1 class="text-3xl font-semibold text-center text-gray-900">Claim Requests</h1>
 
     <div class="mt-6">
         <table class="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
             <thead>
-                <tr class="bg-purple-700 text-white">
+                <tr class="bg-gradient-to-br from-gray-900 to-blue-800 text-white">
                     <th class="py-2 px-4 border">Claim ID</th>
                     <th class="py-2 px-4 border">Item ID</th>
                     <th class="py-2 px-4 border">User ID</th>

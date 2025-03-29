@@ -19,7 +19,7 @@ include "../layout/administrator.php";
         <input type="text" name="title" placeholder="Title" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 mb-5" required> 
         <textarea name="description" placeholder="Description" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 mb-5" required></textarea>
         <input type="file" name="image" class="w-full p-2 border rounded mb-5" required>
-        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Post Item</button>
+        <button type="submit" class="w-full bg-gradient-to-br from-gray-900 to-blue-800 text-white py-2 rounded-lg hover:bg-blue-600 transition">Post Item</button>
     </form>
 </div>
 

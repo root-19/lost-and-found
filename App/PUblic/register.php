@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         <!-- Left Side - Registration Form -->
         <div class="w-full md:w-1/2 p-8">
-            <h2 class="text-3xl font-semibold text-center text-purple-900 mb-6">Register</h2>
+            <h2 class="text-3xl font-semibold text-center  text-gray-700 mb-6">Register</h2>
             <form method="POST">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="terms" class="ml-2 text-sm text-gray-600">I agree to the <a href="#" class="text-purple-900 underline">Terms & Conditions</a></label>
                 </div>
                 <div class="mt-6">
-                    <button type="submit" class="w-full bg-purple-900 text-white py-3 rounded-md hover:bg-purple-800 focus:ring-2 focus:ring-purple-900">
+                    <button type="submit" class="w-full bg-gradient-to-br from-gray-900 to-blue-800 text-white py-3 rounded-md hover:bg-purple-800 focus:ring-2 focus:ring-purple-900">
                         Register
                     </button>
                 </div>
@@ -81,8 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <!-- Right Side - About the System -->
-        <div class="w-full md:w-1/2 bg-purple-100 p-8 flex flex-col justify-center">
-            <h2 class="text-3xl font-semibold text-purple-900 text-center">Lost and Found System</h2>
+        <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
+            <h2 class="text-3xl font-semibold text-gray-700 text-center">Lost and Found System</h2>
             <p class="mt-4 text-gray-700 text-center">The Lost and Found System of Miriam College helps students and faculty report and recover lost items efficiently. This platform ensures a secure and organized way to return found belongings to their rightful owners.</p>
         </div>
 
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <?php if ($success): ?>
             setTimeout(() => {
-                window.location.href = '../Public/login.php';
+                window.location.href = '../Views/student/dashboard.php';
             }, 3000);
             <?php endif; ?>
         });

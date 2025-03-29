@@ -14,12 +14,13 @@ $user_id = isset($_SESSION['role']) && $_SESSION['role'] === "administrator";
 <body>
 
 <!-- Navbar -->
-<nav class="bg-blue-600 shadow-md">
+<nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex items-center">
-                <a href="../administrator/dashboard.php" class="text-white text-2xl font-bold">Miriam Lost and Found System</a>
-            </div>
+    <div class="flex justify-between h-20">
+        <div class="flex items-center">
+            <img src="../../Resources/image/Miriam_College_seal.svg" alt="Logo" class="h-16 w-20 mr-3">
+            <h1 class="text-xl text-gradient-to-br from-gray-900 to-blue-800 font-semibold">Miriam College - Lost and Found System</h1>
+        </div>
 
             <!-- Mobile Menu Button -->
             <div class="flex items-center sm:hidden">
@@ -32,13 +33,13 @@ $user_id = isset($_SESSION['role']) && $_SESSION['role'] === "administrator";
 
             <!-- Navbar Links -->
             <div class="hidden sm:flex sm:items-center space-x-4">
-                <a href="../administrator/dashboard.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
-                <a href="../administrator/post-item.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Post Lost</a>
-                <a href="../administrator/lost.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Lost</a>
-                <a href="../administrator/found-items.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Found</a>
-                <a href="../administrator/claim.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Claim</a>
+                <a href="../administrator/dashboard.php" class="text-black font-bold hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
+                <a href="../administrator/post-item.php" class="text-black font-bold hover:bg-blue-700 px-3 py-2 rounded-md">Post Lost</a>
+                <a href="../administrator/lost.php" class="text-black font-bold hover:bg-blue-700 px-3 py-2 rounded-md">Lost</a>
+                <a href="../administrator/found-items.php" class="text-black font-bold hover:bg-blue-700 px-3 py-2 rounded-md">Found</a>
+                <a href="../administrator/claim.php" class="text-black font-bold hover:bg-blue-700 px-3 py-2 rounded-md">Claim</a>
 
-                <a href="../administrator/user-list.php" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md">Users</a>
+                <a href="../administrator/user-list.php" class="text-black font-bold hover:bg-blue-700 px-3 py-2 rounded-md">Users</a>
                 <a href="../administrator/session.php" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded-md">Logout</a>
             </div>
         </div>

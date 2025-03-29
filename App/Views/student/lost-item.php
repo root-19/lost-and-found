@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["claim_item"])) {
                     
                     <!-- Claim Button -->
                     <button onclick="openClaimModal(<?php echo $item['id']; ?>, '<?php echo $item['image_name']; ?>')"
-                            class="mt-3 w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700">
+                            class="mt-3 w-full bg-gradient-to-br from-gray-900 to-blue-800 bg-blue-700 text-white py-2 rounded-lg hover:bg-purple-700">
                         Claim
                     </button>
                 </div>
